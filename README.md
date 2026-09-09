@@ -30,7 +30,7 @@ Build and start the Nginx container:
 docker compose up -d --build
 ```
 
-Open `http://localhost:8080`.
+Open `http://localhost:8090`.
 
 To stop the container:
 
@@ -48,10 +48,10 @@ cd API-Blog
 docker compose up -d --build
 ```
 
-The website will be available at port `8080`:
+The website will be available at port `8090`:
 
 ```text
-http://YOUR_VPS_IP:8080
+http://YOUR_VPS_IP:8090
 ```
 
 When updating the website:
