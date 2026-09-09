@@ -31,4 +31,6 @@ The health endpoint is available at `http://localhost:3000/health`.
 docker compose up -d --build
 ```
 
-Open `http://localhost:8090`.
+Open `http://localhost:8091`.
+
+The container binds to `127.0.0.1:8091` so it does not conflict with an existing service on port `8090`. For Nginx, proxy `blog.skillswap.asia` to `http://127.0.0.1:8091` and keep any authentication rules scoped to the protected application's domain.
