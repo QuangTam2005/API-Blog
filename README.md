@@ -21,3 +21,42 @@ python -m http.server 5500
 ```
 
 Then visit `http://localhost:5500`.
+
+## Run with Docker
+
+Build and start the Nginx container:
+
+```bash
+docker compose up -d --build
+```
+
+Open `http://localhost:8080`.
+
+To stop the container:
+
+```bash
+docker compose down
+```
+
+## Deploy on a VPS
+
+Install Docker and Docker Compose on the VPS, then run:
+
+```bash
+git clone https://github.com/QuangTam2005/API-Blog.git
+cd API-Blog
+docker compose up -d --build
+```
+
+The website will be available at port `8080`:
+
+```text
+http://YOUR_VPS_IP:8080
+```
+
+When updating the website:
+
+```bash
+git pull
+docker compose up -d --build
+```
