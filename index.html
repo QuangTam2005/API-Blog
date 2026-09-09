@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A Gen Z University field guide to comparing SOAP, REST, GraphQL and gRPC API architectures." />
+  <title>API Architectures // Gen Z University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <nav class="navbar navbar-expand-lg sticky-top site-nav">
+    <div class="container py-2">
+      <a class="navbar-brand" href="#top"><span class="brand-mark">//</span> GZU<span class="text-lime">.LAB</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+          <li class="nav-item"><a class="nav-link" href="#compare">Compare</a></li>
+          <li class="nav-item"><a class="nav-link" href="#choose">Our pick</a></li>
+          <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+          <li class="nav-item"><a class="btn btn-lime btn-sm px-3" href="#compare">Start reading <span>↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="eyebrow mb-4"><span class="pulse"></span> SOFTWARE ARCHITECTURE / 01</div>
+          <h1>Four APIs.<br><span class="scribble">One big</span> question.</h1>
+          <p class="hero-copy">A no-fluff field guide to SOAP, REST, GraphQL and gRPC — made for curious builders who want to pick the right tool for the job.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a class="btn btn-lime btn-lg" href="#compare">Explore the matrix <span>↓</span></a>
+            <a class="btn btn-ghost btn-lg" href="#demo">See the demo <span>↗</span></a>
+          </div>
+          <div class="hero-note mt-4"><span class="sticker">TL;DR</span> Architecture is a product decision, not a personality test.</div>
+        </div>
+        <div class="col-lg-5">
+          <div class="hero-orbit">
+            <div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div>
+            <div class="api-core"><span class="core-label">API</span><strong>pick<br>your<br>flow</strong></div>
+            <div class="float-tag tag-soap">SOAP <small>01</small></div>
+            <div class="float-tag tag-rest">REST <small>02</small></div>
+            <div class="float-tag tag-graphql">GRAPHQL <small>03</small></div>
+            <div class="float-tag tag-grpc">gRPC <small>04</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-band"><div class="marquee-track">REQUEST → RESPONSE <span>•</span> CHOOSE YOUR PROTOCOL <span>•</span> SHIP WITH INTENT <span>•</span> REQUEST → RESPONSE <span>•</span> CHOOSE YOUR PROTOCOL <span>•</span></div></section>
+
+    <section id="compare" class="container section-space">
+      <div class="section-kicker">01 / THE COMPARISON</div>
+      <div class="row align-items-end mb-4"><div class="col-lg-8"><h2>The architecture matrix<span class="text-lime">.</span></h2><p class="section-intro">Same destination, different roads. Scan the trade-offs before you commit.</p></div><div class="col-lg-4 text-lg-end"><div class="legend"><i class="dot dot-lime"></i> strongest fit <i class="dot dot-pink"></i> watch-out</div></div></div>
+      <div class="table-shell">
+        <div class="table-scroll"><table class="comparison-table"><thead><tr><th>Criteria</th><th><span class="arch-label soap-label">SOAP</span><small>contract-first</small></th><th class="recommended"><span class="arch-label rest-label">REST</span><small>resource-first <b>★ pick</b></small></th><th><span class="arch-label graph-label">GraphQL</span><small>query-first</small></th><th><span class="arch-label grpc-label">gRPC</span><small>service-first</small></th></tr></thead>
+        <tbody>
+          <tr><th>Communication</th><td>XML over HTTP, SMTP or TCP</td><td class="good">HTTP / HTTPS</td><td>HTTP / HTTPS</td><td class="good">HTTP/2</td></tr>
+          <tr><th>Data format</th><td>XML</td><td class="good">Usually JSON</td><td>JSON response</td><td class="good">Protocol Buffers</td></tr>
+          <tr><th>Interface style</th><td>Strict operations + WSDL</td><td class="good">Resources + HTTP verbs</td><td>One schema + queries</td><td>Typed service methods</td></tr>
+          <tr><th>Performance</th><td>Heavier payloads</td><td>Fast + cache-friendly</td><td>Efficient requests</td><td class="good">Very high throughput</td></tr>
+          <tr><th>Flexibility</th><td>Predictable, rigid</td><td class="good">Simple + broadly compatible</td><td class="good">Client picks fields</td><td>Strongly typed, less web-native</td></tr>
+          <tr><th>Complexity</th><td class="watch">High setup</td><td class="good">Low to medium</td><td>Medium schema learning</td><td class="watch">High tooling needs</td></tr>
+          <tr><th>Best use cases</th><td>Enterprise + financial workflows</td><td class="good">Web + mobile + CRUD</td><td>Data-rich frontends</td><td>Internal microservices</td></tr>
+          <tr><th>Trade-off</th><td>Secure but verbose</td><td class="good">Easy to learn + scale</td><td>Powerful but query complexity</td><td>Fast but browser friction</td></tr>
+        </tbody></table></div>
+      </div>
+    </section>
+
+    <section id="choose" class="choose-section">
+      <div class="container section-space">
+        <div class="row g-5 align-items-center"><div class="col-lg-5"><div class="section-kicker">02 / THE DECISION</div><h2>We pick <span class="highlight">REST.</span></h2><p class="section-intro">For a Student Management System, boring is beautiful. REST gives students, staff and third-party tools a shared language they already understand: HTTP.</p><div class="quote-card"><span class="quote-mark">“</span><p>Good architecture makes the right thing feel obvious.</p><small>— GZU engineering notes</small></div></div>
+          <div class="col-lg-7"><div class="reason-grid"><div class="reason-card"><span class="reason-num">01</span><h3>Everyone speaks HTTP</h3><p>Browsers, mobile apps and campus integrations can jump in without a specialist client.</p></div><div class="reason-card"><span class="reason-num">02</span><h3>Clear resources</h3><p>Students, courses and enrollments map cleanly to URLs and verbs: GET, POST, PATCH, DELETE.</p></div><div class="reason-card"><span class="reason-num">03</span><h3>Easy to debug</h3><p>Readable JSON plus familiar status codes make testing in Postman or a browser a breeze.</p></div><div class="reason-card"><span class="reason-num">04</span><h3>Grows with the campus</h3><p>Stateless requests, caching and versioned endpoints keep future releases flexible.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="container section-space">
+      <div class="section-kicker">03 / THE DEMO</div>
+      <div class="row mb-4"><div class="col-lg-8"><h2>Try the API<br><span class="text-lime">like a student.</span></h2><p class="section-intro">Pick a campus task, then press run. Watch one click travel through the client, API and database.</p></div></div>
+      <div class="demo-lab">
+        <div class="demo-toolbar"><div><span class="lab-label">CAMPUS API SIMULATOR</span><h3>What do you want to do?</h3></div><div class="scenario-tabs" role="tablist"><button class="scenario-tab active" data-scenario="enroll">Enroll in CS101</button><button class="scenario-tab" data-scenario="courses">Find my courses</button><button class="scenario-tab" data-scenario="drop">Drop a course</button></div></div>
+        <div class="demo-stage"><div class="student-action"><span class="stage-label">01 / YOUR CLICK</span><div class="student-card"><div class="avatar">Q</div><div><strong>Quang’s student portal</strong><small id="scenario-copy">Clicks “Enroll” on CS101</small></div><span class="click-cursor">↗</span></div><button class="run-demo" type="button">Run the request <span>▶</span></button></div>
+          <div class="live-track" aria-label="API request flow"><div class="track-line"><i></i></div><div class="track-node active" data-track="client"><b>01</b><span>Portal</span></div><div class="track-node" data-track="api"><b>02</b><span>REST API</span></div><div class="track-node" data-track="db"><b>03</b><span>Database</span></div><div class="track-node" data-track="response"><b>04</b><span>Response</span></div></div>
+          <div class="demo-result"><div><span class="stage-label">LIVE RESULT</span><h4 id="result-title">Ready to enroll</h4><p id="result-copy">Your request is waiting to be sent.</p></div><div class="result-badge" id="result-badge">READY</div></div>
+        </div>
+      </div>
+      <div class="code-grid mt-4"><div class="code-card"><div class="code-top"><span>REQUEST.JSON</span><button class="copy-btn" data-copy="request-code">copy</button></div><pre id="request-code"><code><span class="code-method">POST</span> /api/v1/enrollments
+Content-Type: application/json
+
+{
+  <span class="code-key">"studentId"</span>: <span class="code-string">"GZU-2048"</span>,
+  <span class="code-key">"courseId"</span>: <span class="code-string">"CS101"</span>
+}</code></pre></div><div class="code-card response"><div class="code-top"><span>RESPONSE.JSON</span><button class="copy-btn" data-copy="response-code">copy</button></div><pre id="response-code"><code><span class="code-status">201 Created</span>
+Content-Type: application/json
+
+{
+  <span class="code-key">"id"</span>: <span class="code-string">"ENR-7781"</span>,
+  <span class="code-key">"status"</span>: <span class="code-string">"confirmed"</span>,
+  <span class="code-key">"course"</span>: <span class="code-string">"CS101 · Web Foundations"</span>
+}</code></pre></div></div>
+      <p class="demo-takeaway"><span>KEY IDEA</span> Every REST call follows the same rhythm: <b>ask</b> with a URL + method, <b>process</b> on the server, then <b>answer</b> with a status code + data.</p>
+    </section>
+
+    <section class="diagram-section"><div class="container section-space"><div class="section-kicker">04 / THE MAP</div><div class="row align-items-end mb-5"><div class="col-lg-8"><h2>Follow the data<span class="text-lime">.</span></h2><p class="section-intro">The system stays decoupled: each layer has one job and the API is the friendly translator in the middle.</p></div></div><div class="architecture-map"><div class="map-node client-node"><span>01</span><strong>Student portal</strong><small>web / mobile</small></div><div class="map-line"><i></i><em>HTTPS + JSON</em></div><div class="map-node api-node"><span>02</span><strong>REST API</strong><small>routes + validation</small></div><div class="map-line"><i></i><em>SQL query</em></div><div class="map-node db-node"><span>03</span><strong>Campus database</strong><small>students / courses</small></div></div></div></section>
+
+    <section id="resources" class="container section-space resources"><div class="section-kicker">05 / GO DEEPER</div><div class="row align-items-end mb-4"><div class="col-lg-8"><h2>Receipts<span class="text-pink">.</span></h2><p class="section-intro">Reliable docs we used to keep the vibes accurate.</p></div></div><div class="resource-list"><a href="https://graphql.org/resources/" target="_blank"><span>01</span><strong>GraphQL Official Resources</strong><small>graphql.org ↗</small></a><a href="https://grpc.io/docs/" target="_blank"><span>02</span><strong>gRPC Documentation</strong><small>grpc.io ↗</small></a><a href="https://www.w3.org/TR/soap12/" target="_blank"><span>03</span><strong>W3C SOAP 1.2 Specification</strong><small>w3.org ↗</small></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides" target="_blank"><span>04</span><strong>MDN HTTP Guides</strong><small>developer.mozilla.org ↗</small></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container d-flex flex-wrap justify-content-between gap-3"><span><span class="brand-mark">//</span> GZU.LAB</span><span>Built for the curious · 2026</span><span>API ARCHITECTURES / FIELD NOTE 01</span></div></footer>
+  <button class="back-top" aria-label="Back to top">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="script.js"></script>
+</body>
+</html>
