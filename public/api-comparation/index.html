@@ -57,15 +57,17 @@
 
     <section class="marquee-band"><div class="marquee-track">REQUEST → RESPONSE <span>•</span> CHOOSE YOUR PROTOCOL <span>•</span> SHIP WITH INTENT <span>•</span> REQUEST → RESPONSE <span>•</span> CHOOSE YOUR PROTOCOL <span>•</span></div></section>
 
+    <section class="container section-space evolution-section"><div class="evolution-card"><div class="section-kicker">CONTEXT / THE SHORT VERSION</div><h2>The Architectural Evolution: <span class="text-lime">Why are there four?</span></h2><div class="evolution-grid"><article class="evolution-step"><span class="evolution-number">01</span><h3>SOAP</h3><p>Born for early Enterprise and Banking systems that needed a strict contract—like a notarized agreement. Reliable and precise, but cumbersome.</p></article><article class="evolution-step"><span class="evolution-number">02</span><h3>REST</h3><p>Freed the web by using simple, familiar HTTP. It is like choosing an item by number from a menu: visible, predictable and easy to use.</p></article><article class="evolution-step"><span class="evolution-number">03</span><h3>GraphQL</h3><p>Arrived when mobile apps received too much data (over-fetching) or needed too many requests (under-fetching). The client can ask for exactly the fields it needs.</p></article><article class="evolution-step"><span class="evolution-number">04</span><h3>gRPC</h3><p>Built for internal microservices that need maximum speed. It packs data into binary Protobuf and sends it over the high-speed HTTP/2 highway.</p></article></div></div></section>
+
     <section id="compare" class="container section-space">
       <div class="section-kicker">01 / THE COMPARISON</div>
       <div class="row align-items-end mb-4"><div class="col-lg-8"><h2>The architecture matrix<span class="text-lime">.</span></h2><p class="section-intro">Same destination, different roads. Scan the trade-offs before you commit.</p></div><div class="col-lg-4 text-lg-end"><div class="legend"><i class="dot dot-lime"></i> strongest fit <i class="dot dot-pink"></i> watch-out</div></div></div>
       <div class="table-shell">
         <div class="table-scroll"><table class="comparison-table"><thead><tr><th>Criteria</th><th><span class="arch-label soap-label">SOAP</span><small>contract-first</small></th><th class="recommended"><span class="arch-label rest-label">REST</span><small>resource-first <b>★ pick</b></small></th><th><span class="arch-label graph-label">GraphQL</span><small>query-first</small></th><th><span class="arch-label grpc-label">gRPC</span><small>service-first</small></th></tr></thead>
         <tbody>
-          <tr><th>Communication</th><td>XML over HTTP, SMTP or TCP</td><td class="good">HTTP / HTTPS</td><td>HTTP / HTTPS</td><td class="good">HTTP/2</td></tr>
-          <tr><th>Data format</th><td>XML</td><td class="good">Usually JSON</td><td>JSON response</td><td class="good">Protocol Buffers</td></tr>
-          <tr><th>Interface style</th><td>Strict operations + WSDL</td><td class="good">Resources + HTTP verbs</td><td>One schema + queries</td><td>Typed service methods</td></tr>
+          <tr><th>Communication / Protocol <a class="table-ref" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank" rel="noreferrer">[1]</a></th><td>XML over HTTP, SMTP or TCP</td><td class="good">HTTP / HTTPS</td><td>HTTP / HTTPS</td><td class="good">HTTP/2</td></tr>
+          <tr><th>Data format</th><td>XML <a class="table-ref" href="https://www.w3.org/TR/soap12-part1/" target="_blank" rel="noreferrer">[2]</a></td><td class="good">Usually JSON</td><td>JSON response</td><td class="good">Protocol Buffers <a class="table-ref" href="https://grpc.io/docs/what-is-grpc/core-concepts/" target="_blank" rel="noreferrer">[4]</a></td></tr>
+          <tr><th>Interface style</th><td>Strict operations + WSDL</td><td class="good">Resources + HTTP verbs</td><td>One schema + queries <a class="table-ref" href="https://graphql.org/learn/" target="_blank" rel="noreferrer">[3]</a></td><td>Typed service methods</td></tr>
           <tr><th>Performance</th><td>Heavier payloads</td><td>Fast + cache-friendly</td><td>Efficient requests</td><td class="good">Very high throughput</td></tr>
           <tr><th>Flexibility</th><td>Predictable, rigid</td><td class="good">Simple + broadly compatible</td><td class="good">Client picks fields</td><td>Strongly typed, less web-native</td></tr>
           <tr><th>Complexity</th><td class="watch">High setup</td><td class="good">Low to medium</td><td>Medium schema learning</td><td class="watch">High tooling needs</td></tr>
@@ -73,12 +75,14 @@
           <tr><th>Trade-off</th><td>Secure but verbose</td><td class="good">Easy to learn + scale</td><td>Powerful but query complexity</td><td>Fast but browser friction</td></tr>
         </tbody></table></div>
       </div>
+      <aside class="jargon-buster" aria-labelledby="jargon-title"><div class="section-kicker">BEGINNER TOOLKIT</div><h3 id="jargon-title">Beginner Jargon Buster</h3><div class="jargon-grid"><div><strong>WSDL (SOAP)</strong><p>Think of it as the blueprint for a strict agreement: it specifies exactly which function to call and which data types are required.</p></div><div><strong>Over-fetching vs Under-fetching</strong><p>Over-fetching is asking for a name but receiving the whole family history. Under-fetching is calling the server three times to collect an avatar, profile and grades for one screen.</p></div><div><strong>Protocol Buffers (gRPC)</strong><p>Data is compressed into binary (0s and 1s) so machines can read it quickly, instead of using human-readable JSON text.</p></div><div><strong>HTTP/2 Multiplexing</strong><p>Several data streams can travel in parallel over one connection, like multiple lanes sharing one highway instead of opening a new queue for each request.</p></div></div></aside>
     </section>
 
     <section id="choose" class="choose-section">
       <div class="container section-space">
         <div class="row g-5 align-items-center"><div class="col-lg-5"><div class="section-kicker">02 / THE DECISION</div><h2>We pick <span class="highlight">REST.</span></h2><p class="section-intro">For a Student Management System, boring is beautiful. REST gives students, staff and third-party tools a shared language they already understand: HTTP.</p><div class="quote-card"><span class="quote-mark">“</span><p>Good architecture makes the right thing feel obvious.</p><small>— GZU engineering notes</small></div></div>
           <div class="col-lg-7"><div class="reason-grid"><div class="reason-card"><span class="reason-num">01</span><h3>Everyone speaks HTTP</h3><p>Browsers, mobile apps and campus integrations can jump in without a specialist client.</p></div><div class="reason-card"><span class="reason-num">02</span><h3>Clear resources</h3><p>Students, courses and enrollments map cleanly to URLs and verbs: GET, POST, PATCH, DELETE.</p></div><div class="reason-card"><span class="reason-num">03</span><h3>Easy to debug</h3><p>Readable JSON plus familiar status codes make testing in Postman or a browser a breeze.</p></div><div class="reason-card"><span class="reason-num">04</span><h3>Grows with the campus</h3><p>Stateless requests, caching and versioned endpoints keep future releases flexible.</p></div></div></div>
+          <div class="why-not-card"><div class="section-kicker">THE COUNTERARGUMENT</div><h3>Why NOT the others for this portal?</h3><div class="why-not-grid"><div><strong>Why not SOAP?</strong><p>Too heavy for a student-facing web frontend; the XML envelope adds latency the portal does not need.</p></div><div><strong>Why not GraphQL?</strong><p>Student systems mostly use fixed CRUD operations such as course enrollment and grade lookup. GraphQL would add server governance and more complex caching.</p></div><div><strong>Why not gRPC?</strong><p>Browsers do not support native gRPC directly; they need a gRPC-Web proxy. It fits internal service-to-service communication better than this client portal.</p></div></div></div>
         </div>
       </div>
     </section>
@@ -88,7 +92,7 @@
       <div class="row mb-4"><div class="col-lg-8"><h2>Try the API<br><span class="text-lime">like a student.</span></h2><p class="section-intro">Pick a campus task, then press run. Watch one click travel through the client, API and database.</p></div></div>
       <div class="demo-lab">
         <div class="demo-toolbar"><div><span class="lab-label">CAMPUS API SIMULATOR</span><h3>What do you want to do?</h3></div><div class="scenario-tabs" role="tablist"><button class="scenario-tab active" data-scenario="enroll">Enroll in CS101</button><button class="scenario-tab" data-scenario="courses">Find my courses</button><button class="scenario-tab" data-scenario="drop">Drop a course</button></div></div>
-        <div class="demo-stage"><div class="student-action"><span class="stage-label">01 / YOUR CLICK</span><div class="student-card"><div class="avatar">Q</div><div><strong>Quang’s student portal</strong><small id="scenario-copy">Clicks “Enroll” on CS101</small></div><span class="click-cursor">↗</span></div><button class="run-demo" type="button">Run the request <span>▶</span></button></div>
+        <div class="demo-stage"><div class="student-action"><span class="stage-label">01 / YOUR CLICK</span><div class="student-card"><div class="avatar">Q</div><div><strong>Quang’s student portal</strong><small id="scenario-copy">Clicks “Enroll” on CS101</small></div><span class="click-cursor">↗</span></div><button class="run-demo" type="button">Run the request <span>▶</span></button><p class="simulator-note">* Note: This is an interactive frontend simulation demonstrating the state machine flow (Client → REST API → Database → Response) without making live network calls.</p></div>
           <div class="live-track" aria-label="API request flow"><div class="track-line"><i></i></div><div class="track-node active" data-track="client"><b>01</b><span>Portal</span></div><div class="track-node" data-track="api"><b>02</b><span>REST API</span></div><div class="track-node" data-track="db"><b>03</b><span>Database</span></div><div class="track-node" data-track="response"><b>04</b><span>Response</span></div></div>
           <div class="demo-result"><div><span class="stage-label">LIVE RESULT</span><h4 id="result-title">Ready to enroll</h4><p id="result-copy">Your request is waiting to be sent.</p><small class="response-contract">success · data · meta</small></div><div class="result-badge" id="result-badge">READY</div></div>
         </div>
@@ -96,16 +100,22 @@
       <div class="code-grid mt-4"><div class="code-card"><div class="code-top"><span>REQUEST.JSON</span><button class="copy-btn" data-copy="request-code">copy</button></div><pre id="request-code"><code><span class="code-method">POST</span> /api/v1/enrollments
 Content-Type: application/json
 
+<span class="code-comment">// studentId = ID of the student performing the action</span>
+<span class="code-comment">// courseId = code of the course the student wants to enroll in</span>
+
 {
   <span class="code-key">"studentId"</span>: <span class="code-string">"GZU-2048"</span>,
   <span class="code-key">"courseId"</span>: <span class="code-string">"CS101"</span>
 }</code></pre></div><div class="code-card response"><div class="code-top"><span>RESPONSE.JSON</span><button class="copy-btn" data-copy="response-code">copy</button></div><pre id="response-code"><code><span class="code-status">201 Created</span>
 Content-Type: application/json
 
+<span class="code-comment">// 201 Created means the server created a new enrollment record</span>
+
 {
   <span class="code-key">"id"</span>: <span class="code-string">"ENR-7781"</span>,
   <span class="code-key">"status"</span>: <span class="code-string">"confirmed"</span>,
-  <span class="code-key">"course"</span>: <span class="code-string">"CS101 · Web Foundations"</span>
+  <span class="code-key">"course"</span>: <span class="code-string">"CS101 · Web Foundations"</span>,
+  <span class="code-key">"createdAt"</span>: <span class="code-string">"2026-09-09T08:00:00Z"</span>
 }</code></pre></div></div>
       <p class="demo-takeaway"><span>RESPONSE CONTRACT</span> Keep the response predictable: <b>success</b> says what happened, <b>data</b> carries the result, and <b>meta</b> helps with tracing and pagination. This demo uses <b>200 OK</b> for delete so every scenario keeps the same response shape.</p>
     </section>
