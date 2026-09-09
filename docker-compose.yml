@@ -4,4 +4,4 @@ services:
     container_name: api-blog
     restart: unless-stopped
     ports:
-      - "8090:80"
+      - "8090:3000"

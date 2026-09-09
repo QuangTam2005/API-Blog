@@ -2,3 +2,5 @@
 .gitignore
 *.pdf
 README.md
+node_modules
+dist

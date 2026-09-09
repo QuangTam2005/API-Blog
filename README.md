@@ -1,62 +1,34 @@
-# GZU.LAB — Comparing API Architectures
+# SkillSwap Blog
 
-A responsive English-language blog project based on the assignment in `Comparing API Architectures.pdf`.
+Static, multi-article blog powered by NestJS. The first article is the API architecture field note at:
 
-## Included
+```text
+https://blog.skillswap.asia/api-comparation/
+```
 
-- Comparison matrix for SOAP, REST API, GraphQL and gRPC using 8 criteria.
-- REST API selection and justification for a Student Management System.
-- Interactive campus API simulator with enroll, list-courses and drop-course scenarios.
-- Animated Client → REST API → Database → Response request flow.
-- Communication/architecture diagram.
-- Technical references from the assignment brief.
-- Responsive Gen Z University visual system with jQuery interactions and Bootstrap layout utilities.
+## Structure
+
+- `public/index.html` — blog homepage and article directory.
+- `public/api-comparation/index.html` — first blog article.
+- `public/assets/` — shared styles and interactive article scripts.
+- `src/` — NestJS server and static-file configuration.
+
+Each new blog can be added as a folder under `public/<slug>/index.html`; NestJS serves it automatically at `blog.skillswap.asia/<slug>/`.
 
 ## Run locally
 
-Open `index.html` directly, or serve the folder for the best browser behavior:
-
 ```bash
-python -m http.server 5500
+npm install
+npm run start:dev
 ```
 
-Then visit `http://localhost:5500`.
+Open `http://localhost:3000` or `http://localhost:3000/api-comparation/`.
+The health endpoint is available at `http://localhost:3000/health`.
 
 ## Run with Docker
-
-Build and start the Nginx container:
 
 ```bash
 docker compose up -d --build
 ```
 
 Open `http://localhost:8090`.
-
-To stop the container:
-
-```bash
-docker compose down
-```
-
-## Deploy on a VPS
-
-Install Docker and Docker Compose on the VPS, then run:
-
-```bash
-git clone https://github.com/QuangTam2005/API-Blog.git
-cd API-Blog
-docker compose up -d --build
-```
-
-The website will be available at port `8090`:
-
-```text
-http://YOUR_VPS_IP:8090
-```
-
-When updating the website:
-
-```bash
-git pull
-docker compose up -d --build
-```

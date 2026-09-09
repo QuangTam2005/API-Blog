@@ -1,8 +1,18 @@
-FROM nginx:1.27-alpine
+FROM node:22-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY nest-cli.json tsconfig.json ./
+COPY src ./src
+COPY public ./public
+RUN npm run build
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html styles.css script.js /usr/share/nginx/html/
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:22-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/public ./public
+EXPOSE 3000
+CMD ["node", "dist/main.js"]
