@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "Node16",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -10,11 +10,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./",
     "incremental": false,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],

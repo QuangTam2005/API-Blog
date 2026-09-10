@@ -5,6 +5,12 @@ $(function () {
     '<div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>',
   ).appendTo("body");
 
+  $(".article-card").on("click", function (event) {
+    if ($(event.target).closest("a, button").length) return;
+    const href = $(this).find("h3 a").attr("href");
+    if (href) window.location.href = href;
+  });
+
   const postSlug = document.body.dataset.postSlug;
   if (postSlug) {
     const $views = $(".post-views");

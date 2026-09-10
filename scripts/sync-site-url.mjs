@@ -24,6 +24,7 @@ for (const page of pages) {
   const pageOrigin = canonicalMatch ? new URL(canonicalMatch[1]).origin : null;
   const knownOrigins = new Set([
     new URL(config.url).origin,
+    'http://localhost:3000',
     'https://blog.skillswap.asia',
     pageOrigin,
   ]);
