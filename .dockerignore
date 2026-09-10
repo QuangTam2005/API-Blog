@@ -4,3 +4,8 @@
 README.md
 node_modules
 dist
+coverage
+*.log
+*.tsbuildinfo
+*.map
+.env.*

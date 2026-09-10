@@ -2,9 +2,13 @@
   "name": "skillswap-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "Static multi-article blog powered by NestJS.",
+  "description": "Võ Quang Tâm's personal engineering blog powered by NestJS.",
   "scripts": {
-    "build": "nest build",
+    "build": "node scripts/sync-site-url.mjs && nest build",
+    "lint": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "test:e2e": "jest --runInBand --config jest.config.js",
+    "test:preview": "node scripts/check-preview.mjs",
     "start": "node dist/main.js",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main.js"
@@ -14,6 +18,8 @@
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
     "@nestjs/serve-static": "^5.0.0",
+    "compression": "^1.8.1",
+    "helmet": "^8.3.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2"
   },
@@ -21,7 +27,16 @@
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
+    "@types/compression": "^1.8.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.0.0",
+    "@types/supertest": "^7.2.1",
+    "jest": "^30.5.1",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.12",
     "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "multer": "2.3.0"
   }
 }

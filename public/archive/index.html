@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Võ Quang Tâm" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Kho bài viết của Võ Quang Tâm về backend, Java OOP, thiết kế API và system design."
+    />
+    <link rel="canonical" href="http://localhost:3000/archive/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:url" content="http://localhost:3000/archive/" />
+    <meta property="og:title" content="Kho bài viết — Quang Tâm Blog" />
+    <meta
+      property="og:description"
+      content="Các ghi chép học tập về kỹ thuật phần mềm và backend."
+    />
+    <meta property="og:site_name" content="Quang Tâm Blog" />
+    <meta property="og:image" content="http://localhost:3000/assets/img/preview-archive.webp" />
+    <meta property="og:image:secure_url" content="http://localhost:3000/assets/img/preview-archive.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bố cục lưu trữ các ghi chép kỹ thuật trên nền màu tím và lime" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kho bài viết — Quang Tâm Blog" />
+    <meta
+      name="twitter:description"
+      content="Các ghi chép học tập về kỹ thuật phần mềm và backend."
+    />
+    <meta name="twitter:image" content="http://localhost:3000/assets/img/preview-archive.webp" />
+    <meta name="twitter:image:alt" content="Bố cục lưu trữ các ghi chép kỹ thuật trên nền màu tím và lime" />
+    <title>Kho bài viết — Quang Tâm Blog</title>
+    <script type="application/ld+json">
+      {
+        "@context": "http://localhost:3000/",
+        "@type": "CollectionPage",
+        "name": "Kho bài viết — Quang Tâm Blog",
+        "url": "http://localhost:3000/archive/",
+        "inLanguage": "vi",
+        "author": { "@type": "Person", "name": "Võ Quang Tâm" },
+        "isPartOf": {
+          "@type": "Blog",
+          "name": "Quang Tâm Blog",
+          "url": "http://localhost:3000/"
+        }
+      }
+    </script>
+    <link rel="preconnect" href="http://localhost:3000/" />
+    <link rel="preconnect" href="http://localhost:3000/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
+    <header>
+      <nav class="navbar sticky-top site-nav" aria-label="Điều hướng chính">
+        <div class="container">
+          <a class="navbar-brand" href="/" title="Về trang chủ"
+            ><span class="brand-mark">//</span> Quang Tâm<span class="text-lime"
+              >.BLOG</span
+            ></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            aria-controls="archiveNav"
+            aria-expanded="false"
+            aria-label="Mở điều hướng"
+          >
+            <span aria-hidden="true">☰</span>
+          </button>
+          <div
+            class="site-links ms-auto d-flex align-items-center gap-4"
+            id="archiveNav"
+          >
+            <a class="archive-nav-link" href="/archive/" aria-current="page"
+              >Lưu trữ</a
+            ><a class="archive-nav-link" href="/series/java-spring/"
+              >Series Java Spring</a
+            ><a class="archive-nav-link" href="/#about">Về tôi</a
+            ><a class="archive-nav-link" href="/#topics">Chủ đề</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section
+        class="container section-space archive-page-heading"
+        aria-labelledby="archive-title"
+      >
+        <div class="section-kicker">LƯU TRỮ / TẤT CẢ BÀI VIẾT</div>
+        <h1 id="archive-title">
+          Dấu vết của<br /><span class="text-lime">một hành trình học.</span>
+        </h1>
+        <p class="hero-copy">
+          Những ghi chép từ hành trình học Kỹ thuật phần mềm tại FPTU, được sắp
+          xếp theo các câu hỏi mình đang tìm cách trả lời.
+        </p>
+      </section>
+      <section
+        class="container section-space archive-list"
+        aria-labelledby="archive-list-title"
+      >
+        <div class="archive-heading">
+          <div>
+            <div class="section-kicker">01 / ĐÃ XUẤT BẢN</div>
+            <h2 id="archive-list-title">
+              Ghi chép<span class="text-pink">.</span>
+            </h2>
+          </div>
+          <p class="section-intro archive-count">
+            <strong>01</strong> bài đã xuất bản
+          </p>
+        </div>
+        <article class="article-card">
+          <div class="article-card-top">
+            <span class="article-meta">KIẾN TRÚC PHẦN MỀM</span
+            ><span class="article-meta">8 PHÚT ĐỌC</span>
+          </div>
+          <div class="article-card-content">
+            <p class="article-index">GHI CHÉP 01</p>
+            <h3>
+              <a href="/api-comparation/"
+                >Bốn API.<br /><span class="text-lime"
+                  >Một câu hỏi lớn.</span
+                ></a
+              >
+            </h3>
+            <p class="article-summary">
+              So sánh SOAP, REST, GraphQL và gRPC qua một simulator campus API
+              hư cấu.
+            </p>
+            <div class="article-card-meta">
+              <span>Võ Quang Tâm</span
+              ><time datetime="2026-09-09">09 tháng 09, 2026</time
+              ><span>Thẻ: API · system design</span
+              ><a class="series-badge" href="/series/java-spring/"
+                >Thuộc series: Java Spring</a
+              >
+            </div>
+            <div class="article-card-footer">
+              <span class="sticker">ĐÃ XUẤT BẢN</span
+              ><a class="read-link" href="/api-comparation/"
+                >Đọc bài viết <b aria-hidden="true">↗</b></a
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+      <section
+        class="container section-space archive-empty"
+        aria-labelledby="planned-title"
+      >
+        <div class="section-kicker">02 / CHỦ ĐỀ SẮP TỚI</div>
+        <h2 id="planned-title">
+          Những điều mình<br /><span class="text-lime">muốn tìm hiểu.</span>
+        </h2>
+        <p class="section-intro">
+          Java OOP, NestJS, backend và system design sẽ xuất hiện ở đây khi mình
+          hoàn thiện thêm các ghi chép học tập. Chưa có bài nào được xem là đã
+          xuất bản trước thời điểm đó.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container d-flex justify-content-between flex-wrap gap-3">
+        <span><span class="brand-mark">//</span> Quang Tâm.BLOG</span
+        ><span>Võ Quang Tâm · Sinh viên FPTU</span
+        ><span>Học và chia sẻ · 2026</span>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

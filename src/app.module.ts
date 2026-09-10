@@ -6,7 +6,7 @@ import { BlogController } from './blog.controller';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
+    rootPath: join(process.cwd(), 'public'),
       serveRoot: '/',
       exclude: ['/health'],
     }),
