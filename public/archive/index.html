@@ -7,7 +7,7 @@
     <meta name="robots" content="index, follow" />
     <meta
       name="description"
-      content="Kho bài viết của Võ Quang Tâm về backend, Java OOP, thiết kế API và system design."
+      content="Kho bài viết của Võ Quang Tâm về backend, Java OOP, thiết kế API và thiết kế hệ thống, được sắp xếp theo chủ đề."
     />
     <link rel="canonical" href="http://localhost:3000/archive/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Kho bài viết — Quang Tâm Blog" />
     <meta
       property="og:description"
-      content="Các ghi chép học tập về kỹ thuật phần mềm và backend."
+      content="Tuyển tập ghi chép tiếng Việt về kỹ thuật phần mềm, backend, API và Java Spring."
     />
     <meta property="og:site_name" content="Quang Tâm Blog" />
     <meta property="og:image" content="http://localhost:3000/assets/img/preview-archive.webp" />
@@ -29,14 +29,14 @@
     <meta name="twitter:title" content="Kho bài viết — Quang Tâm Blog" />
     <meta
       name="twitter:description"
-      content="Các ghi chép học tập về kỹ thuật phần mềm và backend."
+      content="Tuyển tập ghi chép tiếng Việt về kỹ thuật phần mềm, backend, API và Java Spring."
     />
     <meta name="twitter:image" content="http://localhost:3000/assets/img/preview-archive.webp" />
     <meta name="twitter:image:alt" content="Bố cục lưu trữ các ghi chép kỹ thuật trên nền màu tím và lime" />
     <title>Kho bài viết — Quang Tâm Blog</title>
     <script type="application/ld+json">
       {
-        "@context": "http://localhost:3000/",
+        "@context": "https://schema.org/",
         "@type": "CollectionPage",
         "name": "Kho bài viết — Quang Tâm Blog",
         "url": "http://localhost:3000/archive/",
@@ -49,10 +49,10 @@
         }
       }
     </script>
-    <link rel="preconnect" href="http://localhost:3000/" />
-    <link rel="preconnect" href="http://localhost:3000/" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -68,9 +68,9 @@
       <nav class="navbar sticky-top site-nav" aria-label="Điều hướng chính">
         <div class="container">
           <a class="navbar-brand" href="/" title="Về trang chủ"
-            ><span class="brand-mark">//</span> Quang Tâm<span class="text-lime"
+            ><img class="site-logo" src="/assets/img/logo.jpg" width="32" height="32" alt="Logo Quang Tâm Blog" decoding="async" /><span>Quang Tâm<span class="text-lime"
               >.BLOG</span
-            ></a
+            ></span></a
           ><button
             class="menu-toggle"
             type="button"
@@ -84,11 +84,10 @@
             class="site-links ms-auto d-flex align-items-center gap-4"
             id="archiveNav"
           >
-            <a class="archive-nav-link" href="/archive/" aria-current="page"
-              >Lưu trữ</a
+            <a class="archive-nav-link" href="/#articles"
+              >Bài viết</a
             ><a class="archive-nav-link" href="/series/java-spring/"
               >Series Java Spring</a
-            ><a class="archive-nav-link" href="/#about">Về tôi</a
             ><a class="archive-nav-link" href="/#topics">Chủ đề</a>
           </div>
         </div>
@@ -131,27 +130,26 @@
           <div class="article-card-content">
             <p class="article-index">GHI CHÉP 01</p>
             <h3>
-              <a href="/api-comparation/"
-                >Bốn API.<br /><span class="text-lime"
-                  >Một câu hỏi lớn.</span
+              <a href="/api-comparison/"
+                >Bốn cách thiết kế API.<br /><span class="text-lime"
+                  >Một bài toán lựa chọn.</span
                 ></a
               >
             </h3>
             <p class="article-summary">
-              So sánh SOAP, REST, GraphQL và gRPC qua một simulator campus API
-              hư cấu.
+              So sánh SOAP, REST, GraphQL và gRPC qua một hệ thống quản lý sinh
+              viên giả định.
             </p>
             <div class="article-card-meta">
-              <span>Võ Quang Tâm</span
-              ><time datetime="2026-09-09">09 tháng 09, 2026</time
-              ><span>Thẻ: API · system design</span
+              <time datetime="2026-09-09">9 tháng 9 năm 2026</time
+              ><span>Thẻ: API · thiết kế hệ thống</span
               ><a class="series-badge" href="/series/java-spring/"
-                >Thuộc series: Java Spring</a
+                >Trong series Java Spring</a
               >
             </div>
             <div class="article-card-footer">
               <span class="sticker">ĐÃ XUẤT BẢN</span
-              ><a class="read-link" href="/api-comparation/"
+              ><a class="read-link" href="/api-comparison/"
                 >Đọc bài viết <b aria-hidden="true">↗</b></a
               >
             </div>
@@ -167,17 +165,16 @@
           Những điều mình<br /><span class="text-lime">muốn tìm hiểu.</span>
         </h2>
         <p class="section-intro">
-          Java OOP, NestJS, backend và system design sẽ xuất hiện ở đây khi mình
+          Java OOP, NestJS, backend và thiết kế hệ thống sẽ xuất hiện ở đây khi mình
           hoàn thiện thêm các ghi chép học tập. Chưa có bài nào được xem là đã
           xuất bản trước thời điểm đó.
         </p>
       </section>
     </main>
     <footer class="site-footer">
-      <div class="container d-flex justify-content-between flex-wrap gap-3">
-        <span><span class="brand-mark">//</span> Quang Tâm.BLOG</span
-        ><span>Võ Quang Tâm · Sinh viên FPTU</span
-        ><span>Học và chia sẻ · 2026</span>
+      <div class="container footer-line">
+        <span>Quang Tâm.BLOG</span
+        ><span>© 2026 Võ Quang Tâm · Sinh viên Kỹ thuật phần mềm, FPTU</span>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>

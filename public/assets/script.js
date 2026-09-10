@@ -5,6 +5,75 @@ $(function () {
     '<div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>',
   ).appendTo("body");
 
+  const postSlug = document.body.dataset.postSlug;
+  if (postSlug) {
+    const $views = $(".post-views");
+    const $value = $(".post-views__value");
+    const sessionKey = `quang-tam-blog:viewed:${postSlug}`;
+    let timer;
+    let counted = false;
+    const wasCounted = () => {
+      try {
+        return sessionStorage.getItem(sessionKey);
+      } catch {
+        return false;
+      }
+    };
+    const markCounted = () => {
+      try {
+        sessionStorage.setItem(sessionKey, "1");
+      } catch {
+        // Restricted storage must not break article reading.
+      }
+    };
+
+    const setViews = (views) => {
+      $value.text(new Intl.NumberFormat("vi-VN").format(views));
+      $views.attr("aria-busy", "false");
+    };
+    const scheduleView = () => {
+      if (counted || document.hidden || timer) return;
+      timer = window.setTimeout(() => {
+        timer = undefined;
+        if (document.hidden || counted || wasCounted()) return;
+        fetch(`/api/posts/${encodeURIComponent(postSlug)}/view`, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("view request failed");
+            return response.json();
+          })
+          .then((data) => {
+            counted = true;
+            markCounted();
+            setViews(data.views);
+          })
+          .catch(() => undefined);
+      }, 5000);
+    };
+
+    fetch(`/api/posts/${encodeURIComponent(postSlug)}/views`, {
+      headers: { Accept: "application/json" },
+      cache: "no-store",
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("view request failed");
+        return response.json();
+      })
+      .then((data) => setViews(data.views))
+      .catch(() => $views.remove());
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && timer) {
+        window.clearTimeout(timer);
+        timer = undefined;
+      } else {
+        scheduleView();
+      }
+    });
+    scheduleView();
+  }
+
   $(".skip-link").on("click", function (event) {
     const target = document.querySelector(this.getAttribute("href"));
     if (!target) return;
@@ -88,7 +157,7 @@ $(function () {
       tabindex: index === 0 ? "0" : "-1",
     });
   });
-  $(".scenario-tabs").attr("aria-label", "Chọn một kịch bản campus API hư cấu");
+  $(".scenario-tabs").attr("aria-label", "Chọn một kịch bản API sinh viên giả định");
   $(".demo-result").attr({
     id: "scenario-result",
     role: "tabpanel",

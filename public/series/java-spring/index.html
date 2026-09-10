@@ -7,7 +7,7 @@
     <meta name="robots" content="index, follow" />
     <meta
       name="description"
-      content="Series Java Spring của Võ Quang Tâm: hành trình học backend bằng Java và Spring từ nền tảng đến kiến trúc."
+      content="Series Java Spring bằng tiếng Việt của Võ Quang Tâm, đi từ nền tảng Java đến tư duy xây dựng backend."
     />
     <link
       rel="canonical"
@@ -22,7 +22,7 @@
     <meta property="og:title" content="Series Java Spring — Quang Tâm Blog" />
     <meta
       property="og:description"
-      content="Lộ trình ghi chép học Java Spring cho người đang xây nền tảng backend."
+      content="Lộ trình học Java Spring bằng tiếng Việt dành cho người đang xây nền tảng backend."
     />
     <meta property="og:site_name" content="Quang Tâm Blog" />
     <meta property="og:image" content="http://localhost:3000/assets/img/preview-java-spring.webp" />
@@ -35,18 +35,18 @@
     <meta name="twitter:title" content="Series Java Spring — Quang Tâm Blog" />
     <meta
       name="twitter:description"
-      content="Lộ trình ghi chép học Java Spring cho người đang xây nền tảng backend."
+      content="Lộ trình học Java Spring bằng tiếng Việt dành cho người đang xây nền tảng backend."
     />
     <meta name="twitter:image" content="http://localhost:3000/assets/img/preview-java-spring.webp" />
     <meta name="twitter:image:alt" content="Đường nét hình học mô tả lộ trình học Java Spring và backend" />
     <title>Series Java Spring — Quang Tâm Blog</title>
     <script type="application/ld+json">
       {
-        "@context": "http://localhost:3000/",
+        "@context": "https://schema.org/",
         "@type": "CreativeWorkSeries",
         "name": "Java Spring",
         "url": "http://localhost:3000/series/java-spring/",
-        "description": "Series ghi chép học tập về Java Spring và backend.",
+        "description": "Series học tập bằng tiếng Việt về Java Spring và tư duy xây dựng backend.",
         "inLanguage": "vi",
         "author": {
           "@type": "Person",
@@ -57,16 +57,16 @@
           {
             "@type": "BlogPosting",
             "position": 1,
-            "name": "Bốn API. Một câu hỏi lớn.",
-            "url": "http://localhost:3000/api-comparation/"
+            "name": "Bốn cách thiết kế API. Một bài toán lựa chọn.",
+            "url": "http://localhost:3000/api-comparison/"
           }
         ]
       }
     </script>
-    <link rel="preconnect" href="http://localhost:3000/" />
-    <link rel="preconnect" href="http://localhost:3000/" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -82,9 +82,9 @@
       <nav class="navbar sticky-top site-nav" aria-label="Điều hướng chính">
         <div class="container">
           <a class="navbar-brand" href="/" title="Về trang chủ"
-            ><span class="brand-mark">//</span> Quang Tâm<span class="text-lime"
+            ><img class="site-logo" src="/assets/img/logo.jpg" width="32" height="32" alt="Logo Quang Tâm Blog" decoding="async" /><span>Quang Tâm<span class="text-lime"
               >.BLOG</span
-            ></a
+            ></span></a
           ><button
             class="menu-toggle"
             type="button"
@@ -98,13 +98,12 @@
             class="site-links ms-auto d-flex align-items-center gap-4"
             id="seriesNav"
           >
-            <a class="archive-nav-link" href="/archive/">Lưu trữ</a
+            <a class="archive-nav-link" href="/#articles">Bài viết</a
             ><a
               class="archive-nav-link"
               href="/series/java-spring/"
               aria-current="page"
               >Series Java Spring</a
-            ><a class="archive-nav-link" href="/#about">Về tôi</a
             ><a class="archive-nav-link" href="/#topics">Chủ đề</a>
           </div>
         </div>
@@ -135,13 +134,13 @@
       <section class="container section-space" aria-labelledby="roadmap-title">
         <div class="section-kicker">01 / THỨ TỰ HỌC</div>
         <h2 id="roadmap-title">
-          Bản đồ<br /><span class="text-lime">của series.</span>
+          Lộ trình<br /><span class="text-lime">của series.</span>
         </h2>
         <div class="series-list">
           <article class="series-item">
             <div class="series-number">BÀI BỔ TRỢ 01</div>
             <div>
-              <h3><a href="/api-comparation/">Bốn API. Một câu hỏi lớn.</a></h3>
+              <h3><a href="/api-comparison/">Bốn cách thiết kế API. Một bài toán lựa chọn.</a></h3>
               <p>
                 Kiến thức kiến trúc API bổ trợ cho việc xây backend bằng Java
                 Spring. Bài viết so sánh SOAP, REST, GraphQL và gRPC; không
@@ -149,8 +148,8 @@
               </p>
               <div class="article-card-meta">
                 <span>Đã xuất bản</span
-                ><time datetime="2026-09-09">09 tháng 09, 2026</time
-                ><span>Kiến trúc API · system design</span>
+                ><time datetime="2026-09-09">9 tháng 9 năm 2026</time
+                ><span>Kiến trúc API · thiết kế hệ thống</span>
               </div>
             </div>
           </article>
@@ -217,10 +216,9 @@
       </section>
     </main>
     <footer class="site-footer">
-      <div class="container d-flex justify-content-between flex-wrap gap-3">
-        <span><span class="brand-mark">//</span> Quang Tâm.BLOG</span
-        ><span>Võ Quang Tâm · Sinh viên FPTU</span
-        ><span>Học và chia sẻ · 2026</span>
+      <div class="container footer-line">
+        <span>Quang Tâm.BLOG</span
+        ><span>© 2026 Võ Quang Tâm · Sinh viên Kỹ thuật phần mềm, FPTU</span>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
