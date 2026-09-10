@@ -18,8 +18,16 @@ export class PostViewsService implements OnModuleDestroy {
     const databasePath = resolve(
       process.env.DATABASE_PATH ?? './data/blog.sqlite',
     );
-    mkdirSync(dirname(databasePath), { recursive: true });
-    this.database = new Database(databasePath);
+    try {
+      mkdirSync(dirname(databasePath), { recursive: true });
+      this.database = new Database(databasePath);
+    } catch (error) {
+      const reason = error instanceof Error ? error.message : String(error);
+      throw new Error(
+        `Không thể khởi tạo SQLite tại ${databasePath}. ` +
+          `Kiểm tra DATABASE_PATH và quyền ghi thư mục: ${reason}`,
+      );
+    }
     this.database.pragma('journal_mode = WAL');
     this.database.pragma('busy_timeout = 5000');
     this.database.exec(`

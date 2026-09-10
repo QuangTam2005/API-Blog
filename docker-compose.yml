@@ -5,3 +5,10 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:8091:3000"
+    volumes:
+      - api_blog_data:/app/data
+    environment:
+      DATABASE_PATH: /app/data/blog.sqlite
+
+volumes:
+  api_blog_data:

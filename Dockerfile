@@ -13,6 +13,9 @@ FROM node:22.13.0-alpine
 WORKDIR /app
 ENV NODE_ENV=production
 RUN addgroup -S nodeapp && adduser -S nodeapp -G nodeapp
+RUN mkdir -p /app/data \
+    && chown -R nodeapp:nodeapp /app/data
+ENV DATABASE_PATH=/app/data/blog.sqlite
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY --chown=nodeapp:nodeapp --from=build /app/dist ./dist
